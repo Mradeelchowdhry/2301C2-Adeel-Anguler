@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let item of products">
+      <div class="card" *ngIf ="item.qty>1">
+        <img src="{{item.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}
+            <span class="badge text-bg-danger" *ngIf="item.price <= 1000">Sale 20% Off</span>
+            <span class="badge text-bg-primary"*ngIf="item.price >= 2000 && item.price
+              <=5000">Sale 10% Off</span>
+            <span class="badge text-bg-secondary" *ngIf="item.price >= 5000">Sale ENDED</span>
+            <span class="badge text-bg-warning" *ngIf="item.qty < 1">Out Of Stock</span>
+          </h5>
+          <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quas obcaecati, quos, est non omnis nostrum ipsa animi molestiae id quis molestias. Non corrupti magni culpa quis, quae soluta id!</p>
+          <a href="#" class="btn btn-primary">${{item.price}}</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
